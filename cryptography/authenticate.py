@@ -8,15 +8,14 @@ def calculate_hash(password):
 
 def subscribe(user_name, password):
     account = user_name + ':' + calculate_hash(password)
-    f = open('accounts.txt', 'w')
-    f.write(account)
-    f.close()
+    with open('accounts.txt', 'w') as f:  # Using 'with' to automatically close the file
+        f.write(account)
     print ('You are registered now!')
     
 
 def login(user_name, password):
-    f = open('accounts.txt', 'r')
-    account_file = f.read()
+    with open('accounts.txt', 'r') as f:  # Using 'with' to automatically close the file
+        account_file = f.read()
     s = account_file.split(':')
     user_name_file = s[0]
     password_file = s[1]
