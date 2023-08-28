@@ -1,7 +1,26 @@
+# methodology of algorithm:
+# key: not fixed
+# Blocks: Bytes (per ASCII character)
+# ex.:
+# key = xyz (3 character)
+# text = abc
+
+# key calculation: 120+121+122/3 = 121
+
+# encryption:
+# a:97+121=218 -> Ú
+# b:98+121=219 -> Û
+# c:99+121=220 -> Ü
+
+# decryption:
+# Ú: 218-121=97 -> a
+# Û: 219-121=98 -> b
+# Ü: 220-121=99 -> c
+
+
 def save_file(results, file_path):
     with open(file_path, 'w') as f:
         f.write(results)
-
 
 def open_file(file_path):
     #create file object
