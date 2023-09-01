@@ -1,5 +1,6 @@
 from Crypto.Hash import MD5
 from Crypto.Hash import SHA256
+from Crypto.Hash import HMAC
 
 # 1.MD5
 message = b"Hello World"  # note the added 'b' here, in contrast with Pluralsight code
@@ -34,3 +35,11 @@ print("The SHA-256 checksum of", filename, "is:", checksum)
 # alternatively, we can use various tools to generate the SHA256 hash
 # e.g. on mac: shasum -a 256 file.txt
 # openssl sha256 file.txt
+
+
+# HMAC
+message = b"Hello World"  # note the added 'b' here, in contrast with Pluralsight code
+password = b"mypassword"
+h = HMAC.new(password)
+h.update(message)
+print(h.hexdigest())

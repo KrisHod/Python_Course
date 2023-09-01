@@ -41,3 +41,8 @@ print(base64.b64encode(b'Hi World'))
 print(encrypted)
 decrypted = aes.decrypt(encrypted)
 print(decrypted)
+
+# output
+# b'SGkgV29ybGQ='
+# b'KqG5rftouuZ5ht238iAQrv35Kl+1UQu+k4cEHV2E/TI='
+# b'Hi World'
